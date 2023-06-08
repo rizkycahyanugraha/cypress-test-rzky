@@ -1,11 +1,4 @@
-export class OrderPage { 
-    //Login
-    loginPage_username = "input[placeholder='Enter email']"
-    loginPage_password = "input[placeholder='Enter password']"
-    masuk = ".item-container > .before-login > .btn-login"
-    login = "button[type='submit']"
-    startOrder = "button[class='btn-start-delevery d-flex btn btn-secondary']"
-
+export class OrderPage {
     //Start input order
     samedayOrder = '.sameday-delivery-option > .label-radio'
     tambahPickup = '.input-location > .btn'
@@ -35,26 +28,6 @@ export class OrderPage {
     createOrder2 = '.order-2'
     finalOrder = '.continue-payment'
     confirmOrder = '.swal2-confirm'
-
-    navigate(url) {
-        cy.visit(url)
-    }
-
-    clickMasuk() {
-        cy.get(this.masuk).click()
-    }
-
-    enterUsername(username) {
-        cy.get(this.loginPage_username).type(username)
-    }
-
-    enterPassword(password = "") {
-        cy.get(this.loginPage_password).type(password)
-    }
-
-    clickLogin(){
-        cy.get(this.login).click()
-    }
 
     clickSameday() {
         cy.get(this.samedayOrder).click()

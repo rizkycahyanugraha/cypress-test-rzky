@@ -1,6 +1,10 @@
 import { OrderPage } from "../../pages/order_page";
+import { LoginPage } from "../../pages/login_page";
+
 
 const orderPage = new OrderPage()
+const loginPage = new LoginPage()
+
 const dropData = [
     {
         inputAlamatK: "Gedung Crystal of Knowledge Jl. Letjen DR. Sjarif Thajeb Pondok Cina Beji, Depok City, West Java 16424, Indonesia{downarrow}{enter}",
@@ -24,11 +28,11 @@ const dropData = [
 
 describe('buat orderan superkul', () => {
     it('login berhasil', () => {
-        orderPage.navigate("https://superkul.my.id")
-        orderPage.clickMasuk()
-        orderPage.enterUsername("rizkynugraha9003@gmail.com")
-        orderPage.enterPassword("Kebersamaan@1")
-        orderPage.clickLogin()
+        loginPage.navigate("https://superkul.my.id")
+        loginPage.clickMasuk()
+        loginPage.enterUsername("rizkynugraha9003@gmail.com")
+        loginPage.enterPassword("Kebersamaan@1")
+        loginPage.clickLogin()
         cy.wait(8000)
         orderPage.clickSameday()
         orderPage.clickDate()

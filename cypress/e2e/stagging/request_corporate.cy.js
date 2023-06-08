@@ -1,14 +1,16 @@
 import { Corporate } from "../../pages/corporate_page";
+import { LoginPage } from "../../pages/login_page";
 
+const loginPage = new LoginPage()
 const corporatePage = new Corporate()
 
 describe('Request Corporate', () => {
     it('Berhasil request corporate' ,{ scrollBehavior: false }, () => {
-        corporatePage.navigate("https://superkul.my.id")
-        corporatePage.clickMasuk()
-        corporatePage.enterUsername("rizkynugraha9001@gmail.com")
-        corporatePage.enterPassword("Kebersamaan@1")
-        corporatePage.clickLogin()
+        loginPage.navigate("https://superkul.my.id")
+        loginPage.clickMasuk()
+        loginPage.enterUsername("rizkynugraha9001@gmail.com")
+        loginPage.enterPassword("Kebersamaan@1")
+        loginPage.clickLogin()
         cy.wait(3000)
         corporatePage.clickProfile()
         cy.wait(2000)
